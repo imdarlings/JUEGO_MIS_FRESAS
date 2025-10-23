@@ -39,14 +39,16 @@ public class Player : MonoBehaviour
         // --- Animaciones ---
         animator.SetFloat("MOVIMIENTO", Mathf.Abs(move)); // caminar/reposo
         if (move != 0)
-            transform.localScale = new Vector3(Mathf.Sign(move), 1, 1); // voltear sprite
+        {
+            float flip = Mathf.Sign(move);
+            transform.localScale = new Vector3(flip * 7f, 7f, 1f);
+        }
 
         // --- Saltar ---
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && enSuelo)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             animator.SetTrigger("SALTO");
-            enSuelo = false;
         }
 
         // --- Límites del mapa ---
