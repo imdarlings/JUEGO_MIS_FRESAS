@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: de0ce2a9220fb474aa4e7d8af50ee77d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5822106222834657415
+    second: PISSOS_DE_NOCHE_0
+  - first:
+      213: -4587427972202709383
+    second: PISSOS_DE_NOCHE_1
+  - first:
+      213: 9185637650036442874
+    second: PISSOS_DE_NOCHE_2
+  - first:
+      213: 314109424876220024
+    second: PISSOS_DE_NOCHE_3
+  - first:
+      213: -2714001382681564327
+    second: PISSOS_DE_NOCHE_4
+  - first:
+      213: -3474397772997342025
+    second: PISSOS_DE_NOCHE_5
+  - first:
+      213: -3985237868965514504
+    second: PISSOS_DE_NOCHE_6
+  - first:
+      213: -592158819294921375
+    second: PISSOS_DE_NOCHE_7
+  - first:
+      213: 8085833292995285076
+    second: PISSOS_DE_NOCHE_8
+  - first:
+      213: 2734766011656799450
+    second: PISSOS_DE_NOCHE_9
+  - first:
+      213: -3198055484117828360
+    second: PISSOS_DE_NOCHE_10
+  - first:
+      213: 8811295341619459551
+    second: PISSOS_DE_NOCHE_11
+  - first:
+      213: -4672751548444404562
+    second: PISSOS_DE_NOCHE_12
+  - first:
+      213: 4584629510097740414
+    second: PISSOS_DE_NOCHE_13
+  - first:
+      213: 858265921427786230
+    second: PISSOS_DE_NOCHE_14
+  - first:
+      213: 4335683134165034849
+    second: PISSOS_DE_NOCHE_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 161
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9775957bc39b33fa0800000000000000
+      internalID: -5822106222834657415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 127
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97eba24809e2650c0800000000000000
+      internalID: -4587427972202709383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 161
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af640ed66c0f97f70800000000000000
+      internalID: 9185637650036442874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 127
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e69529bd0fb5400800000000000000
+      internalID: 314109424876220024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 161
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ba8513f1ee55ad0800000000000000
+      internalID: -2714001382681564327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 127
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bcc51432a578cfc0800000000000000
+      internalID: -3474397772997342025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 161
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f230ead54791b8c0800000000000000
+      internalID: -3985237868965514504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 127
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16dbf45f0ba38c7f0800000000000000
+      internalID: -592158819294921375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 93
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450d2061a86a63070800000000000000
+      internalID: 8085833292995285076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_9
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 93
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad48d9cb237d3f520800000000000000
+      internalID: 2734766011656799450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 93
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fcba213b793e93d0800000000000000
+      internalID: -3198055484117828360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_11
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 93
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd53840dd62084a70800000000000000
+      internalID: 8811295341619459551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 54
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea49057593d072fb0800000000000000
+      internalID: -4672751548444404562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 54
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e722620cf30ef9f30800000000000000
+      internalID: 4584629510097740414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 54
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9c689ee4c29eb00800000000000000
+      internalID: 858265921427786230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISSOS_DE_NOCHE_15
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 55
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1672f8ec6d07b2c30800000000000000
+      internalID: 4335683134165034849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PISSOS_DE_NOCHE_0: -5822106222834657415
+      PISSOS_DE_NOCHE_1: -4587427972202709383
+      PISSOS_DE_NOCHE_10: -3198055484117828360
+      PISSOS_DE_NOCHE_11: 8811295341619459551
+      PISSOS_DE_NOCHE_12: -4672751548444404562
+      PISSOS_DE_NOCHE_13: 4584629510097740414
+      PISSOS_DE_NOCHE_14: 858265921427786230
+      PISSOS_DE_NOCHE_15: 4335683134165034849
+      PISSOS_DE_NOCHE_2: 9185637650036442874
+      PISSOS_DE_NOCHE_3: 314109424876220024
+      PISSOS_DE_NOCHE_4: -2714001382681564327
+      PISSOS_DE_NOCHE_5: -3474397772997342025
+      PISSOS_DE_NOCHE_6: -3985237868965514504
+      PISSOS_DE_NOCHE_7: -592158819294921375
+      PISSOS_DE_NOCHE_8: 8085833292995285076
+      PISSOS_DE_NOCHE_9: 2734766011656799450
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
