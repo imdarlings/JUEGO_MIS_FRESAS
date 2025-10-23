@@ -447,6 +447,23 @@ Transform:
   - {fileID: 2039899540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1097467292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3100678687277764361, guid: a22cde3f0de36c8419cb07a084794c9f, type: 3}
+  m_PrefabInstance: {fileID: 4477901405712180996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097467296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097467292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8944d1e935d57d45bf382e4c81f4d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1486762524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8836635117148754371, guid: 10a9a969dd585a74eb8122e2cf15009d, type: 3}
@@ -2698,6 +2715,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2238309269179452844, guid: a22cde3f0de36c8419cb07a084794c9f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3100678687277764361, guid: a22cde3f0de36c8419cb07a084794c9f, type: 3}
       propertyPath: m_Name
       value: PERGAMINO
@@ -2705,7 +2726,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3100678687277764361, guid: a22cde3f0de36c8419cb07a084794c9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097467296}
   m_SourcePrefab: {fileID: 100100000, guid: a22cde3f0de36c8419cb07a084794c9f, type: 3}
 --- !u!1001 &5331177879957653698
 PrefabInstance:
