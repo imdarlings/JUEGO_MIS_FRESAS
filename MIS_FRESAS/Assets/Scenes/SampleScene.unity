@@ -119,6 +119,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &184622021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184622023}
+  - component: {fileID: 184622022}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &184622022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184622021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcaceaf6d8c9574478945599d3516558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidas: 3
+  fresasRecolectadas: 0
+  leyoPergamino: 0
+  tiempoRestante: 60
+--- !u!4 &184622023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184622021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.912426, y: 12.688736, z: -10.092754}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &225751090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2710962200379001840, guid: 008104788c2203c42a0c3ed6b40f1b40, type: 3}
+  m_PrefabInstance: {fileID: 471091253448760169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &225751094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225751090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152475a6b4e648d4c835baf4220ab4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &465036333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4368835020330981974, guid: edd41bffc3dff694d81bda78cf07791a, type: 3}
@@ -2454,7 +2519,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2710962200379001840, guid: 008104788c2203c42a0c3ed6b40f1b40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 225751094}
   m_SourcePrefab: {fileID: 100100000, guid: 008104788c2203c42a0c3ed6b40f1b40, type: 3}
 --- !u!1001 &3293459222182804385
 PrefabInstance:
@@ -2906,3 +2974,4 @@ SceneRoots:
   - {fileID: 471091253448760169}
   - {fileID: 593973588}
   - {fileID: 1625226286}
+  - {fileID: 184622023}
