@@ -7,6 +7,7 @@ public class Trampa : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.instance.RestarVida();
+            Destroy(gameObject);
         }
     }
 }

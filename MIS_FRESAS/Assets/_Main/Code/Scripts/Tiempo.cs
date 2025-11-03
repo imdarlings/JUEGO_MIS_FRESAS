@@ -6,7 +6,7 @@ public class Tiempo : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.instance.SumarTiempo(5f); // suma 5 segundos
+            GameManager.instance.SumarTiempo(10f);
             Destroy(gameObject);
         }
     }

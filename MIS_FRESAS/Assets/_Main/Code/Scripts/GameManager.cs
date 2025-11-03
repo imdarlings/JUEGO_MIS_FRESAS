@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public static UIManager uiManager;
 
     [Header("Jugador")]
     public int vidas = 3;
@@ -20,6 +21,32 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        Debug.Log("GameManager iniciado");
+
+        if (uiManager == null)
+        {
+            uiManager = Object.FindFirstObjectByType<UIManager>();
+            if (uiManager != null)
+                Debug.Log("UIManager reconectado automáticamente.");
+            else
+                Debug.LogError("UIManager no encontrado en la escena.");
+        }
+
+        ActualizarUIInicial();
+    }
+
+    private void ActualizarUIInicial()
+    {
+        if (uiManager == null) return;
+
+        uiManager.ActualizarFresas(fresasRecolectadas);
+        uiManager.ActualizarVidas(vidas);
+        uiManager.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
+        uiManager.ActualizarPergamino();
+    }
+
     void Update()
     {
         if (!juegoActivo) return;
@@ -31,30 +58,43 @@ public class GameManager : MonoBehaviour
             tiempoRestante = 0;
             Perder("¡Se acabó el tiempo!");
         }
+
+        // Actualiza la UI del tiempo cada frame (puedes optimizar para no llamar cada frame)
+        if (uiManager != null)
+            uiManager.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
     }
 
     //  Fresas
     public void SumarFresa()
     {
         fresasRecolectadas++;
+        if (uiManager != null)
+            uiManager.ActualizarFresas(fresasRecolectadas);
     }
 
     //  Estrellas
     public void SumarTiempo(float segundosExtra = 10f)
     {
         tiempoRestante += segundosExtra;
+        if (uiManager != null)
+            uiManager.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
     }
 
     // Pociones
     public void SumarVida(int cantidad = 1)
     {
         vidas = Mathf.Min(vidas + cantidad, 5);
+        if (uiManager != null)
+            uiManager.ActualizarVidas(vidas);
     }
 
     // Arañas
     public void RestarVida(int cantidad = 1)
     {
         vidas -= cantidad;
+        if (uiManager != null)
+            uiManager.ActualizarVidas(vidas);
+
         if (vidas <= 0)
         {
             Perder("¡Te quedaste sin vidas!");
@@ -65,7 +105,9 @@ public class GameManager : MonoBehaviour
     public void LeerPergamino()
     {
         leyoPergamino = true;
-        Debug.Log("olo necesitas 5 fresas.");
+        Debug.Log("solo necesitas 5 fresas.");
+        if (uiManager != null)
+            uiManager.ActualizarPergamino();
     }
 
     // Príncipe
@@ -96,7 +138,7 @@ public class GameManager : MonoBehaviour
     void Perder(string razon)
     {
         juegoActivo = false;
-        Debug.Log("Perdiste" + razon);
+        Debug.Log("Perdiste: " + razon);
         // SceneManager.LoadScene("Derrota");
     }
 }
