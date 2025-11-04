@@ -2,12 +2,20 @@ using UnityEngine;
 
 public class Trampa : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    public int daño = 1;
+    private GameManager gameManager;
+
+    [SerializeField]
+    void Awake()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameManager.instance.RestarVida();
-            Destroy(gameObject);
-        }
+        gameManager = FindFirstObjectByType<GameManager>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        if (gameManager != null)
+            gameManager.RestarVida(daño);
     }
 }

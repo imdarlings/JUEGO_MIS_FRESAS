@@ -882,11 +882,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraVida:
-  - {fileID: 1464862328}
-  - {fileID: 1307955066}
-  - {fileID: 1883701298}
-  - {fileID: 223519097}
   - {fileID: 906331985}
+  - {fileID: 223519097}
+  - {fileID: 1883701298}
+  - {fileID: 1307955066}
+  - {fileID: 1464862328}
   textoFresas: {fileID: 227309779}
   textoTiempo: {fileID: 1995831086}
   textoPergaminpo: {fileID: 1430853283}
@@ -1923,6 +1923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1dc6d671ae9cd488e64122f6b88da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "da\xF1o": 1
 --- !u!1 &593973586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,7 +4552,7 @@ GameObject:
   - component: {fileID: 2039899544}
   - component: {fileID: 2039899543}
   - component: {fileID: 2039899545}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MAPA
   m_TagString: Suelo
   m_Icon: {fileID: 0}

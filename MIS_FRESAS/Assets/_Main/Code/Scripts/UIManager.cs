@@ -34,10 +34,17 @@ public class UIManager : MonoBehaviour
     {
         if (barraVida == null || barraVida.Length == 0) return;
 
+       
+        vidas = Mathf.Clamp(vidas, 0, barraVida.Length - 1);
+
+    
         for (int i = 0; i < barraVida.Length; i++)
         {
-            barraVida[i].enabled = (i < vidas);
+            barraVida[i].enabled = false;
         }
+
+        
+        barraVida[vidas].enabled = true;
     }
 
     public void ActualizarFresas(int cantidad)
