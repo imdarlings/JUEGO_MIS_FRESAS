@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Tiempo")]
     public float tiempoRestante = 60f;
+
     private bool juegoActivo = true;
+    private bool juegoTerminado = false;
 
     void Awake()
     {
@@ -25,9 +28,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager iniciado");
 
+        // Intentar reconectar UIManager de varias formas
         if (uiManager == null)
         {
-            uiManager = Object.FindFirstObjectByType<UIManager>();
+            uiManager = UIManager.instance;
+            if (uiManager == null)
+            {
+                uiManager = Object.FindFirstObjectByType<UIManager>();
+            }
+
             if (uiManager != null)
                 Debug.Log("UIManager reconectado automáticamente.");
             else
@@ -49,76 +58,81 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!juegoActivo) return;
+        if (!juegoActivo || juegoTerminado) return;
 
         // Contador del tiempo
         tiempoRestante -= Time.deltaTime;
         if (tiempoRestante <= 0)
         {
             tiempoRestante = 0;
-            Perder("¡Se acabó el tiempo!");
+            PerderJuego("¡Se acabó el tiempo!");
         }
 
         // Actualiza la UI del tiempo cada frame (puedes optimizar para no llamar cada frame)
-        if (uiManager != null)
-            uiManager.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
+        uiManager?.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
     }
 
     //  Fresas
     public void SumarFresa()
     {
+        if (juegoTerminado) return;
+
         fresasRecolectadas++;
-        if (uiManager != null)
-            uiManager.ActualizarFresas(fresasRecolectadas);
+        uiManager?.ActualizarFresas(fresasRecolectadas);
     }
 
-    //  Estrellas
+    //  Tiempo extra
     public void SumarTiempo(float segundosExtra = 10f)
     {
+        if (juegoTerminado) return;
+
         tiempoRestante += segundosExtra;
-        if (uiManager != null)
-            uiManager.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
+        uiManager?.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
     }
 
     // Pociones
     public void SumarVida(int cantidad = 1)
     {
+        if (juegoTerminado) return;
+
         vidas = Mathf.Min(vidas + cantidad, 5);
-        if (uiManager != null)
-            uiManager.ActualizarVidas(vidas);
+        uiManager?.ActualizarVidas(vidas);
     }
 
-    // Arañas
+    // Arañas / daño
     public void RestarVida(int cantidad = 1)
     {
+        if (juegoTerminado) return;
+
         vidas -= cantidad;
-        if (uiManager != null)
-            uiManager.ActualizarVidas(vidas);
+        uiManager?.ActualizarVidas(vidas);
 
         if (vidas <= 0)
         {
-            Perder("¡Te quedaste sin vidas!");
+            vidas = 0;
+            PerderJuego("¡Te quedaste sin vidas!");
         }
     }
 
     // Pergamino
     public void LeerPergamino()
     {
+        if (juegoTerminado) return;
+
         leyoPergamino = true;
         Debug.Log("solo necesitas 5 fresas.");
-        if (uiManager != null)
-            uiManager.ActualizarPergamino();
+        uiManager?.ActualizarPergamino();
     }
 
     // Príncipe
     public void LlegarAlPrincipe()
     {
-        if (!juegoActivo) return;
+        if (!juegoActivo || juegoTerminado) return;
 
         int meta = leyoPergamino ? 5 : 10;
         if (fresasRecolectadas >= meta)
         {
-            Ganar();
+            GanarJuego();
         }
         else
         {
@@ -126,19 +140,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Ganar
-    void Ganar()
+    public void GanarJuego()
     {
+        if (juegoTerminado) return;
+
+        juegoTerminado = true;
         juegoActivo = false;
-        Debug.Log("¡Ganaste!");
-        // SceneManager.LoadScene("Victoria");
+        Time.timeScale = 0f;
+
+        Debug.Log("¡GANASTE!");
+        uiManager?.MostrarVictoria();
     }
 
-    // Perder
-    void Perder(string razon)
+    public void PerderJuego(string razon = "¡PERDISTE!")
     {
+        if (juegoTerminado) return;
+
+        juegoTerminado = true;
         juegoActivo = false;
-        Debug.Log("Perdiste: " + razon);
-        // SceneManager.LoadScene("Derrota");
+        Time.timeScale = 0f;
+
+        Debug.Log(razon);
+        uiManager?.MostrarDerrota(razon);
+
+        StartCoroutine(ReiniciarDespues(5f));
+    }
+
+    private IEnumerator ReiniciarDespues(float segundos)
+    {
+        yield return new WaitForSecondsRealtime(segundos);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        juegoTerminado = false;
     }
 }
