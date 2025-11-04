@@ -4,54 +4,66 @@ public class Player : MonoBehaviour
 {
     [Header("Movimiento")]
     public float speed = 5f;
-    public float jumpForce = 7f;
+    public float jumpForce = 15f;
+    public int maxSaltos = 5;
+
+    private int saltosRestantes;
     private Rigidbody2D rb;
-    private Animator animator;
+    private Animator anim;
+
+    [Header("Suelo")]
+    public Transform groundCheck;
+    public float groundRadius = 0.15f;
+    public LayerMask capaSuelo;
     private bool enSuelo;
 
-    [Header("Límites del mapa")]
+    [Header("Limites del mapa")]
     public float minX = -14f, maxX = 47f;
     public float minY = -7f, maxY = 37f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        saltosRestantes = maxSaltos;
     }
 
     void Update()
     {
-        // --- Movimiento Horizontal (PC o móvil) ---
-        float move = Input.GetAxis("Horizontal");
+        // DETECTAR SUELO
+        bool estabaEnSuelo = enSuelo;
+        enSuelo = Physics2D.OverlapCircle(groundCheck.position, groundRadius, capaSuelo);
 
-#if UNITY_ANDROID || UNITY_IOS
-        // Si se juega en celular, usar botones virtuales (izquierda/derecha)
-        if (Input.touchCount > 0)
+        // Si aterrizi = reinicia saltos
+        if (enSuelo && !estabaEnSuelo)
         {
-            Touch t = Input.GetTouch(0);
-            if (t.position.x < Screen.width / 2) move = -1f;
-            else move = 1f;
+            saltosRestantes = maxSaltos;
         }
-#endif
 
+        // MOVIMIENTO HORIZONTAL
+        float move = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
-        // --- Animaciones ---
-        animator.SetFloat("MOVIMIENTO", Mathf.Abs(move)); // caminar/reposo
+        // FLIP
         if (move != 0)
-        {
-            float flip = Mathf.Sign(move);
-            transform.localScale = new Vector3(flip * 7f, 7f, 1f);
-        }
+            transform.localScale = new Vector3(Mathf.Sign(move) * 7f, 7f, 1f);
 
-        // --- Saltar ---
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && enSuelo)
+        // SALTO 
+        if (Input.GetKeyDown(KeyCode.Space) && saltosRestantes > 0)
         {
+            anim.SetTrigger("SALTO");
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            animator.SetTrigger("SALTO");
+            saltosRestantes--;
         }
 
-        // --- Límites del mapa ---
+
+
+        // ANIMACIONES
+        anim.SetBool("ENSUELO", enSuelo);
+        anim.SetFloat("MOVIMIENTO", Mathf.Abs(move));
+
+        // LIMITES DEL MAPA
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, minX, maxX),
             Mathf.Clamp(transform.position.y, minY, maxY),
@@ -59,23 +71,12 @@ public class Player : MonoBehaviour
         );
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Detectar suelo
-        if (collision.contacts[0].normal.y > 0.5f)
-            enSuelo = true;
-    }
+   
 
-    // Para animaciones especiales
-    public void RecibirDaño()
+    private void OnDrawGizmosSelected()
     {
-        animator.SetTrigger("DAÑO");
-    }
-
-    public void Morir()
-    {
-        animator.SetTrigger("MUERTE");
-        rb.linearVelocity = Vector2.zero;
-        enabled = false; // desactiva el control
+        if (groundCheck == null) return;
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
 }
