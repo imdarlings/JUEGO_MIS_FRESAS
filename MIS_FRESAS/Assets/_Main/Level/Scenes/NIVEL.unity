@@ -7098,6 +7098,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8242935817870787171, guid: edd41bffc3dff694d81bda78cf07791a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15787347
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242935817870787171, guid: edd41bffc3dff694d81bda78cf07791a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.19388781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242935817870787171, guid: edd41bffc3dff694d81bda78cf07791a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00037481106
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242935817870787171, guid: edd41bffc3dff694d81bda78cf07791a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.00823147
+      objectReference: {fileID: 0}
     - target: {fileID: 8541179516775052237, guid: edd41bffc3dff694d81bda78cf07791a, type: 3}
       propertyPath: m_Constraints
       value: 4
