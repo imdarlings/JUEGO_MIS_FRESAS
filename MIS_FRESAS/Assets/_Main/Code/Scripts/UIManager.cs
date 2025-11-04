@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour
     [Header("PANELES")]
     public GameObject panelVictoria;
     public GameObject panelDerrota;
-    public TMP_Text textoDerrotaMensaje;
+    public Button botonReiniciar;
+    public TMP_Text textoBotonReiniciar;
     public GameObject panelPausa;
 
     void Awake()
@@ -26,7 +27,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        // No hacemos nada aquí por defecto
         if (GameManager.instance == null) return;
     }
 
@@ -73,14 +73,27 @@ public class UIManager : MonoBehaviour
         panelVictoria?.SetActive(true);
     }
 
-    // Mostrar Pantalla de Derrota con mensaje
+
     public void MostrarDerrota(string mensaje)
     {
-        panelVictoria?.SetActive(false);
-        panelPausa?.SetActive(false);
-        panelDerrota?.SetActive(true);
-        if (textoDerrotaMensaje != null)
-            textoDerrotaMensaje.text = mensaje;
+        if (panelDerrota != null)
+            panelDerrota.SetActive(true);
+
+        if (botonReiniciar != null)
+        {
+            botonReiniciar.interactable = true;
+            botonReiniciar.onClick.RemoveAllListeners();
+            botonReiniciar.onClick.AddListener(() =>
+            {
+                GameManager.instance.ReiniciarEscena();
+            });
+        }
+    }
+
+    public void ActualizarTextoBotonReiniciar(float tiempo)
+    {
+        if (textoBotonReiniciar != null)
+            textoBotonReiniciar.text = $"Reiniciar ({Mathf.CeilToInt(tiempo)}s)";
     }
 
     // Mostrar/Ocultar pausa

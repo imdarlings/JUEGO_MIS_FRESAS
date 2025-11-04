@@ -148,23 +148,50 @@ public class GameManager : MonoBehaviour
         juegoActivo = false;
         Time.timeScale = 0f;
 
-        Debug.Log("¡GANASTE!");
+        Debug.Log("GANASTE!!");
         uiManager?.MostrarVictoria();
     }
 
-    public void PerderJuego(string razon = "¡PERDISTE!")
+   
+    public void PerderJuego(string mensaje)
     {
         if (juegoTerminado) return;
 
         juegoTerminado = true;
         juegoActivo = false;
-        Time.timeScale = 0f;
+        Debug.Log(mensaje);
 
-        Debug.Log(razon);
-        uiManager?.MostrarDerrota(razon);
+        if (uiManager != null)
+            uiManager.MostrarDerrota(mensaje);
 
-        StartCoroutine(ReiniciarDespues(5f));
+        StartCoroutine(ReiniciarAutomatico(10f)); // 10 segundos
     }
+
+    private IEnumerator ReiniciarAutomatico(float segundos)
+    {
+        float tiempoRestante = segundos;
+
+        while (tiempoRestante > 0)
+        {
+           
+            if (uiManager != null)
+                uiManager.ActualizarTextoBotonReiniciar(tiempoRestante);
+
+            yield return new WaitForSeconds(1f);
+            tiempoRestante--;
+        }
+
+        ReiniciarEscena();
+    }
+
+   
+    public void ReiniciarEscena()
+    {
+        StopAllCoroutines(); // Detiene la cuenta atrás
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
     private IEnumerator ReiniciarDespues(float segundos)
     {

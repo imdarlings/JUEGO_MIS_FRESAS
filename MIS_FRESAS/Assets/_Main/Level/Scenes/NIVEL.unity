@@ -481,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &145325739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -890,10 +890,11 @@ MonoBehaviour:
   textoFresas: {fileID: 227309779}
   textoTiempo: {fileID: 1995831086}
   textoPergaminpo: {fileID: 1430853283}
-  panelVictoria: {fileID: 0}
-  panelDerrota: {fileID: 0}
-  textoDerrotaMensaje: {fileID: 0}
-  panelPausa: {fileID: 0}
+  panelVictoria: {fileID: 1018064392}
+  panelDerrota: {fileID: 1484798931}
+  botonReiniciar: {fileID: 1150301329}
+  textoBotonReiniciar: {fileID: 1572397656}
+  panelPausa: {fileID: 145325738}
 --- !u!4 &296753067
 Transform:
   m_ObjectHideFlags: 0
@@ -1382,7 +1383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &514294535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2026,7 +2027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: REINICIAR
+  m_text: VOLVER AL MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 264abac1312953f489193daa27967d63, type: 2}
   m_sharedMaterial: {fileID: 1785423275533129746, guid: 264abac1312953f489193daa27967d63, type: 2}
@@ -3805,7 +3806,7 @@ GameObject:
   - component: {fileID: 1572397657}
   - component: {fileID: 1572397656}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: REINICIAR-TEXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3850,7 +3851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VOLVER AL MENU
+  m_text: REINICIAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 264abac1312953f489193daa27967d63, type: 2}
   m_sharedMaterial: {fileID: 1785423275533129746, guid: 264abac1312953f489193daa27967d63, type: 2}
