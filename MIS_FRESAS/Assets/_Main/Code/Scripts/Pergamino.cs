@@ -2,12 +2,27 @@ using UnityEngine;
 
 public class Pergamino : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    private bool pergaminoLeido = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !pergaminoLeido)
         {
-            GameManager.instance.LeerPergamino();
-            Destroy(gameObject);
+            UIManager.instance.MostrarPanelPergaminoDecision(true, this);
         }
+    }
+
+    public void LeerPergamino()
+    {
+        pergaminoLeido = true;
+        GameManager.instance.LeerPergamino();
+        UIManager.instance.MostrarPanelPergaminoDecision(false, this);
+        UIManager.instance.MostrarPanelPergaminoLeido(true);
+        gameObject.SetActive(false); // Desaparece el pergamino
+    }
+
+    public void IgnorarPergamino()
+    {
+        UIManager.instance.MostrarPanelPergaminoDecision(false, this);
     }
 }

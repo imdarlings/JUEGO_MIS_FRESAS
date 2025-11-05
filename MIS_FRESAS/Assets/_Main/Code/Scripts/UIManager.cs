@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class UIManager : MonoBehaviour
     public Image[] barraVida;
     public TMP_Text textoFresas;
     public TMP_Text textoTiempo;
-    public TMP_Text textoPergaminpo;
+    public TMP_Text textoPergamino;
 
     [Header("PANELES")]
     public GameObject panelVictoria;
@@ -18,6 +19,14 @@ public class UIManager : MonoBehaviour
     public Button botonReiniciar;
     public TMP_Text textoBotonReiniciar;
     public GameObject panelPausa;
+
+    [Header("Paneles de Pergamino")]
+    public GameObject panelPergaminoDecision;  // Panel con botones “Leer / Ignorar”
+    public GameObject panelPergaminoLeido;     // Panel de mensaje “solo necesitas 5 fresas”
+    public Button botonLeer;
+    public Button botonIgnorar;
+    public Button botonEntendido;
+
 
     void Awake()
     {
@@ -59,11 +68,46 @@ public class UIManager : MonoBehaviour
         textoTiempo.text = Mathf.Max(0, segundos).ToString();
     }
 
-    public void ActualizarPergamino()
+   
+public void ActualizarPergamino(bool leido)
     {
-        if (textoPergaminpo == null || GameManager.instance == null) return;
-        textoPergaminpo.text = GameManager.instance.leyoPergamino ? "Sí" : "No";
+        if (textoPergamino != null)
+            textoPergamino.text = leido ? "SI" : "NO";
     }
+
+
+    public void MostrarPanelPergaminoDecision(bool mostrar, Pergamino pergamino)
+    {
+        if (panelPergaminoDecision != null)
+            panelPergaminoDecision.SetActive(mostrar);
+
+
+        if (mostrar && pergamino != null)
+        {
+            botonLeer.onClick.RemoveAllListeners();
+            botonIgnorar.onClick.RemoveAllListeners();
+
+            botonLeer.onClick.AddListener(() => pergamino.LeerPergamino());
+            botonIgnorar.onClick.AddListener(() => pergamino.IgnorarPergamino());
+        }
+    }
+
+    //Panel de mensaje cuando se lee el pergamino
+    public void MostrarPanelPergaminoLeido(bool mostrar)
+    {
+        if (panelPergaminoLeido != null)
+            panelPergaminoLeido.SetActive(mostrar);
+
+        if (mostrar)
+        {
+            botonEntendido.onClick.RemoveAllListeners();
+            botonEntendido.onClick.AddListener(() =>
+            {
+                panelPergaminoLeido.SetActive(false);
+            });
+        }
+    }
+
 
     // Mostrar Pantalla de Victoria
     public void MostrarVictoria()
@@ -96,9 +140,16 @@ public class UIManager : MonoBehaviour
             textoBotonReiniciar.text = $"Reiniciar ({Mathf.CeilToInt(tiempo)}s)";
     }
 
+
     // Mostrar/Ocultar pausa
     public void MostrarPausa(bool enPausa)
     {
         panelPausa?.SetActive(enPausa);
+    }
+
+    internal void ActualizarPergamino()
+    {
+       if (GameManager.instance == null) return;
+         ActualizarPergamino(GameManager.instance.leyoPergamino);
     }
 }
