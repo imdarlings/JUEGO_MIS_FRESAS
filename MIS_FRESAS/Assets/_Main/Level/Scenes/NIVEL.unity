@@ -7149,6 +7149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "ARA\xD1A"
       objectReference: {fileID: 0}
+    - target: {fileID: 825433504051986807, guid: cf533a490d5866a4d870b3ad632681c2, type: 3}
+      propertyPath: m_TagString
+      value: Trampa
+      objectReference: {fileID: 0}
     - target: {fileID: 1285278151733321951, guid: cf533a490d5866a4d870b3ad632681c2, type: 3}
       propertyPath: m_SortingOrder
       value: 2

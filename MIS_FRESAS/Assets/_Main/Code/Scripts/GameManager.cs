@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
             PerderJuego("¡Se acabó el tiempo!");
         }
 
-        // Actualiza la UI del tiempo cada frame (puedes optimizar para no llamar cada frame)
+       
         uiManager?.ActualizarTiempo(Mathf.CeilToInt(tiempoRestante));
     }
 
@@ -164,21 +164,32 @@ public class GameManager : MonoBehaviour
         if (uiManager != null)
             uiManager.MostrarDerrota(mensaje);
 
-        StartCoroutine(ReiniciarAutomatico(10f)); // 10 segundos
+        var player = Object.FindFirstObjectByType<Player>();
+        if (player != null)
+        {
+            player.PerderJuego();
+        }
+        else
+        {
+          
+            Time.timeScale = 0f;
+        }
+
+        StartCoroutine(ReiniciarAutomatico(10f)); 
     }
 
     private IEnumerator ReiniciarAutomatico(float segundos)
     {
         float tiempoRestante = segundos;
 
+       
         while (tiempoRestante > 0)
         {
-           
             if (uiManager != null)
                 uiManager.ActualizarTextoBotonReiniciar(tiempoRestante);
 
-            yield return new WaitForSeconds(1f);
-            tiempoRestante--;
+            yield return new WaitForSecondsRealtime(1f);
+            tiempoRestante -= 1f;
         }
 
         ReiniciarEscena();

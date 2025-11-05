@@ -4,7 +4,7 @@ using static UnityEngine.GraphicsBuffer;
 public class Follow_Player : MonoBehaviour
 
 {
-    public Transform objetivo; // arrastra aquí a tu jugador
+    public Transform objetivo;
     public float suavizado = 0.2f;
     private Vector3 velocidad = Vector3.zero;
 
@@ -22,7 +22,7 @@ public class Follow_Player : MonoBehaviour
         posicionDeseada.x = Mathf.Clamp(posicionDeseada.x, minX, maxX);
         posicionDeseada.y = Mathf.Clamp(posicionDeseada.y, minY, maxY);
 
-        // Movimiento suave (lerp)
+        // Movimiento suave 
         transform.position = Vector3.SmoothDamp(transform.position, posicionDeseada, ref velocidad, suavizado);
     }
 }

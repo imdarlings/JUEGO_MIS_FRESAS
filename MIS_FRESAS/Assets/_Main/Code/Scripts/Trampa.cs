@@ -5,7 +5,6 @@ public class Trampa : MonoBehaviour
     public int daño = 1;
     private GameManager gameManager;
 
-    [SerializeField]
     void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
@@ -18,4 +17,5 @@ public class Trampa : MonoBehaviour
         if (gameManager != null)
             gameManager.RestarVida(daño);
     }
+
 }
