@@ -38,7 +38,7 @@ Si la princesa decide leer el pergamino mágico, el reto cambia y solo necesitar
 
 **Pantallas finales:**
 
-- **Victoria:** muestra el mensaje “¡Ganaste!” y botones para volver al menú o reiniciar.
+- **Victoria:** muestra el mensaje “¡Ganaste!” y botones para volver al menú y volver a jugar.
 - **Derrota:** incluye botones de “Reiniciar” y “Volver al menú”. Si no se presiona nada, la escena se reinicia automáticamente tras 10 segundos.
 
 
