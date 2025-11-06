@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 91537661}
   - component: {fileID: 91537660}
   m_Layer: 5
-  m_Name: BOTON-VOLVER-A-JUGAR
+  m_Name: BOTON-VOLVER-AL-MENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Reiniciar
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &91537661
@@ -4470,7 +4470,7 @@ GameObject:
   - component: {fileID: 896665766}
   - component: {fileID: 896665765}
   m_Layer: 5
-  m_Name: BOTON-VOLVER-AL-MENU
+  m_Name: BOTON-VOLVER-A-JUGAR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4549,7 +4549,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: Reiniciar
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &896665766
