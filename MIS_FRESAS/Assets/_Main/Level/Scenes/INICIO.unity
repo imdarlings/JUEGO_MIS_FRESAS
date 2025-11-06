@@ -1235,9 +1235,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Usa las flechas o teclas A/D para moverte y la tecla ESPACIO para saltar.\n\rRecolecta
-    todas las fresas que puedas y llevalas al Principe.  \nEvita las ara\xF1as que
-    te quitar\xE1n vida.  \nLas pociones te daran mas vida y las estrellas te daran
-    mas tiempo.\r\n"
+    10 o todas las fresas que puedas y llevalas al Principe.  \nEvita las ara\xF1as
+    que te quitar\xE1n vida.  \nLas pociones te daran mas vida y las estrellas te
+    daran mas tiempo.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 264abac1312953f489193daa27967d63, type: 2}
   m_sharedMaterial: {fileID: 1785423275533129746, guid: 264abac1312953f489193daa27967d63, type: 2}
