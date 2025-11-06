@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
     {
         if (isDead) return;
 
-        if (anim != null) anim.SetTrigger("DAÑO");
+        if (anim != null)anim.SetTrigger("DAÑO");
         GameManager.instance.RestarVida(1);
 
         // si vidas llegaron a 0, activar estado de "muerte" permanente
